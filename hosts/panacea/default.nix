@@ -4,4 +4,8 @@
     ./configuration.nix
     ./hardware-configuration.nix
   ];
+
+  modules.editors = {
+   emacs.enable = true; 
+  };
 }
