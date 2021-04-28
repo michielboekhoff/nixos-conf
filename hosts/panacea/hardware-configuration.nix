@@ -42,4 +42,8 @@
   swapDevices = [ ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  modules.hardware = {
+    nvidia.enable = true;
+  };
 }
