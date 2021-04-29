@@ -8,4 +8,9 @@
   modules.editors = {
    emacs.enable = true; 
   };
+
+  services.plex = {
+    enable = true;
+    openFirewall = true;
+  };
 }

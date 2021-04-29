@@ -1,53 +1,53 @@
 { config, options, lib, home-manager, ... }:
 
 with lib;
-with lib.my;
-{
+with lib.my; {
   options = with types; {
-    user = mkOpt attrs {};
+    user = mkOpt attrs { };
 
-    dotfiles = let t = either str path; in {
-      dir = mkOpt t
-        (findFirst pathExists (toString ../.) [
-          "${config.user.home}/.config/dotfiles"
-          "/etc/dotfiles"
-        ]);
-      binDir     = mkOpt t "${config.dotfiles.dir}/bin";
-      configDir  = mkOpt t "${config.dotfiles.dir}/config";
+    dotfiles = let t = either str path;
+    in {
+      dir = mkOpt t (findFirst pathExists (toString ../.) [
+        "${config.user.home}/.config/dotfiles"
+        "/etc/dotfiles"
+      ]);
+      binDir = mkOpt t "${config.dotfiles.dir}/bin";
+      configDir = mkOpt t "${config.dotfiles.dir}/config";
       modulesDir = mkOpt t "${config.dotfiles.dir}/modules";
-      themesDir  = mkOpt t "${config.dotfiles.modulesDir}/themes";
+      themesDir = mkOpt t "${config.dotfiles.modulesDir}/themes";
     };
 
     home = {
-      file       = mkOpt' attrs {} "Files to place directly in $HOME";
-      configFile = mkOpt' attrs {} "Files to place in $XDG_CONFIG_HOME";
-      dataFile   = mkOpt' attrs {} "Files to place in $XDG_DATA_HOME";
+      file = mkOpt' attrs { } "Files to place directly in $HOME";
+      configFile = mkOpt' attrs { } "Files to place in $XDG_CONFIG_HOME";
+      dataFile = mkOpt' attrs { } "Files to place in $XDG_DATA_HOME";
     };
 
     env = mkOption {
       type = attrsOf (oneOf [ str path (listOf (either str path)) ]);
-      apply = mapAttrs
-        (n: v: if isList v
-               then concatMapStringsSep ":" (x: toString x) v
-               else (toString v));
-      default = {};
+      apply = mapAttrs (n: v:
+        if isList v then
+          concatMapStringsSep ":" (x: toString x) v
+        else
+          (toString v));
+      default = { };
       description = "TODO";
     };
   };
 
   config = {
-    user =
-      let user = builtins.getEnv "USER";
-          name = if elem user [ "" "root" ] then "michiel" else user;
-      in {
-        inherit name;
-        description = "The primary user account";
-        extraGroups = [ "wheel" ];
-        isNormalUser = true;
-        home = "/home/${name}";
-        group = "users";
-        uid = 1000;
-      };
+    user = let
+      user = builtins.getEnv "USER";
+      name = if elem user [ "" "root" ] then "michiel" else user;
+    in {
+      inherit name;
+      description = "The primary user account";
+      extraGroups = [ "wheel" ];
+      isNormalUser = true;
+      home = "/home/${name}";
+      group = "users";
+      uid = 1000;
+    };
 
     # Install user packages to /etc/profiles instead. Necessary for
     # nixos-rebuild build-vm to work.
@@ -71,14 +71,15 @@ with lib.my;
         };
         xdg = {
           configFile = mkAliasDefinitions options.home.configFile;
-          dataFile   = mkAliasDefinitions options.home.dataFile;
+          dataFile = mkAliasDefinitions options.home.dataFile;
         };
       };
     };
 
     users.users.${config.user.name} = mkAliasDefinitions options.user;
 
-    nix = let users = [ "root" config.user.name ]; in {
+    nix = let users = [ "root" config.user.name ];
+    in {
       trustedUsers = users;
       allowedUsers = users;
     };
@@ -87,9 +88,8 @@ with lib.my;
     # because it contains a nix store path.
     env.PATH = [ "$DOTFILES_BIN" "$XDG_BIN_HOME" "$PATH" ];
 
-    environment.extraInit =
-      concatStringsSep "\n"
-        (mapAttrsToList (n: v: "export ${n}=\"${v}\"") config.env);
+    environment.extraInit = concatStringsSep "\n"
+      (mapAttrsToList (n: v: ''export ${n}="${v}"'') config.env);
   };
 }
 

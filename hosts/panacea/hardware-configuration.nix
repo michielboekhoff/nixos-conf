@@ -39,6 +39,11 @@
       fsType = "vfat";
     };
 
+  fileSystems."/data" =
+    { device = "/dev/sda1";
+      fsType = "ntfs";
+    };
+
   swapDevices = [ ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
