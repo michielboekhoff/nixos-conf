@@ -8,6 +8,12 @@ in {
 
   home-manager.users.michiel = import ./home.nix { config = cfg; lib = lib; pkgs = pkgs; };
 
+  environment.systemPackages = with pkgs; [
+    google-cloud-sdk
+    kubectl
+    kubectx
+  ];
+
   services.plex = {
     enable = true;
     openFirewall = true;

@@ -17,6 +17,12 @@ in {
       ohMyZsh = {
         enable = true;
       };
+
+      shellAliases = {
+        k    = "kubectl";
+        kctx = "kubectx";
+        kns  = "kubens";
+      };
     };
 
     user.packages = with pkgs; [
