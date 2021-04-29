@@ -3,7 +3,6 @@
 with lib;
 with lib.my;
 let cfg = config.modules.shell.zsh;
-configDir = config.dotfiles.configDir;
 in {
   options.modules.shell.zsh = {
     enable = mkBoolOpt false;
@@ -14,8 +13,8 @@ in {
     programs.zsh = {
       enable = true;
       enableCompletion = true;
+      promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       ohMyZsh = {
-        theme = "agnoster";
         enable = true;
       };
     };

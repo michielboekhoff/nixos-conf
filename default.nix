@@ -45,5 +45,6 @@ with lib.my;
     unzip
     ripgrep
     fira-code
+    slack
   ];
 }

@@ -1,11 +1,12 @@
 { pkgs, config, lib, ... }:
-{
+let cfg = config.dotfiles;
+in {
   imports = [
     ./configuration.nix
     ./hardware-configuration.nix
   ];
 
-  home-manager.users.michiel = import ./home.nix;
+  home-manager.users.michiel = import ./home.nix { config = cfg; lib = lib; pkgs = pkgs; };
 
   services.plex = {
     enable = true;
