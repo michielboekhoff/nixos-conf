@@ -43,5 +43,7 @@ with lib.my;
     wget
     gnumake
     unzip
+    ripgrep
+    fira-code
   ];
 }

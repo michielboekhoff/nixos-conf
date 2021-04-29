@@ -5,12 +5,20 @@
     ./hardware-configuration.nix
   ];
 
-  modules.editors = {
-   emacs.enable = true; 
-  };
+  home-manager.users.michiel = import ./home.nix;
 
   services.plex = {
     enable = true;
     openFirewall = true;
+  };
+
+  modules = {
+    editors = {
+      emacs.enable = true;
+    };
+
+    shell = {
+      zsh.enable = true;
+    };
   };
 }
