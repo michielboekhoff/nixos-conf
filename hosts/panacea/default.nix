@@ -1,4 +1,5 @@
 { pkgs, config, lib, ... }:
+
 let cfg = config.dotfiles;
 in {
   imports = [
@@ -12,6 +13,8 @@ in {
     google-cloud-sdk
     kubectl
     kubectx
+    conftest
+    my.kube-linter
   ];
 
   services.plex = {
