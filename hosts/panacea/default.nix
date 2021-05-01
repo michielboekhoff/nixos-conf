@@ -30,5 +30,9 @@ in {
     shell = {
       zsh.enable = true;
     };
+
+    gaming = {
+      lutris.enable = true;
+    };
   };
 }
