@@ -25,6 +25,7 @@ in {
   modules = {
     editors = {
       emacs.enable = true;
+      intellij.enable = true;
     };
 
     shell = {
