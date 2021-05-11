@@ -6,7 +6,9 @@
   inputs = 
     {
       # Core dependencies.
-      nixpkgs.url = "nixpkgs/nixos-unstable";     # primary nixpkgs
+      # Pinned to rev because a later ref introduces a change incompatible with emacsPgtkGcc
+      # Revisit this when the emacs pgtk branch gets merged.
+      nixpkgs.url = "github:NixOS/nixpkgs?rev=db98dee459d0467dd946da032e39a96bada42c0c"; # primary nixpkgs
       nixpkgs-unstable.url = "nixpkgs/master";    # for packages on the edge
       home-manager.url = "github:rycee/home-manager/master";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
