@@ -4,22 +4,15 @@ with lib;
 with lib.my;
 let
   cfg = config.modules.editors.vscode;
-  vscode-with-extensions = pkgs.vscode-with-extensions.override {
-    vscodeExtensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "terraform";
-        publisher = "Hashicorp";
-        version = "2.10.2";
-        sha256 = "P+cHNkZMaZi4vSicgaHFlePuO9NyjMTm+g9qufyUczo=";
-      }
-    ];
+  vscode-with-extensions = exts: pkgs.vscode-with-extensions.override {
+    vscodeExtensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace exts;
   };
 in {
   options.modules.editors.vscode = {
     enable = mkBoolOpt false;
     extensions = mkOption {
       default = [];
-      type = with types; listOf either package attrs;
+      type = with types; listOf (either package attrs);
       example = [
         {
           name = "code-runner";
@@ -32,6 +25,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ vscode-with-extensions ];
+    environment.systemPackages = with pkgs; [ (vscode-with-extensions cfg.extensions) ];
   };
 }

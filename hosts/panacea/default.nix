@@ -26,7 +26,23 @@ in {
     editors = {
       emacs.enable = true;
       intellij.enable = true;
-      vscode.enable = true;
+      vscode = {
+        enable = true;
+        extensions = [
+          {
+            name = "terraform";
+            publisher = "Hashicorp";
+            version = "2.10.2";
+            sha256 = "P+cHNkZMaZi4vSicgaHFlePuO9NyjMTm+g9qufyUczo=";
+          }
+          {
+            name = "vscode-docker";
+            publisher = "ms-azuretools";
+            version = "1.12.1";
+            sha256 = "cw2PyYDNG9mUNkKlYCfydi7OkAWSLHo6dS776YEQagU=";
+          }
+        ];
+      };
     };
 
     shell = {
