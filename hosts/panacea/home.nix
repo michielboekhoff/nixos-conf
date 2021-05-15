@@ -34,4 +34,7 @@ in {
       }
     ];
   };
+
+  programs.direnv.enable = true;
+
 }
