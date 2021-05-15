@@ -26,6 +26,7 @@ in {
     editors = {
       emacs.enable = true;
       intellij.enable = true;
+      vscode.enable = true;
     };
 
     shell = {
