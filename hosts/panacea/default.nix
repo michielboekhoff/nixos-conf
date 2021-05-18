@@ -52,5 +52,9 @@ in {
     gaming = {
       lutris.enable = true;
     };
+
+    torrent = {
+      qbittorrent.enable = true;
+    };
   };
 }
