@@ -56,5 +56,9 @@ in {
     torrent = {
       qbittorrent.enable = true;
     };
+
+    dev = {
+      terraform.enable = true;
+    };
   };
 }
