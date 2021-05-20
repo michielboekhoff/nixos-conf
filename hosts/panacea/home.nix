@@ -4,6 +4,21 @@ with lib;
 with lib.my;
 let configDir = config.configDir;
 in {
+  home.file = {
+    ".config/Code/User/settings.json".text =  ''
+      {
+        "terraform.languageServer": {
+          "external": true,
+          "pathToBinary": "${pkgs.terraform-ls}/bin/terraform-ls",
+          "args": [
+            "serve"
+          ]
+        }
+      }
+
+    '';
+  };
+
   programs.gnome-terminal = {
     enable = true;
     themeVariant = "dark";
