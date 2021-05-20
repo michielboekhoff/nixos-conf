@@ -59,6 +59,7 @@ in {
 
     dev = {
       terraform.enable = true;
+      aws.enable = true;
     };
   };
 }
