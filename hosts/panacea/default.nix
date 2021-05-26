@@ -14,6 +14,8 @@ in {
     kubectl
     kubectx
     conftest
+    teams
+    hexchat
     my.kube-linter
   ];
 
