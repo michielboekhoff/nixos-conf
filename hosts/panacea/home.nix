@@ -57,4 +57,15 @@ in {
     enable = true;
     pinentryFlavor = "curses";
   };
+
+  programs.git = {
+    enable = true;
+    userName = "Michiel Boekhoff";
+    userEmail = "michielalexanderb@gmail.com";
+
+    signing = {
+      key = "45C5 8C26 B061 9834 8507  F1DC 17D5 640C E3C6 9AF6";
+      signByDefault = true;
+    };
+  };
 }
