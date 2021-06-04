@@ -7,7 +7,7 @@ in {
     ./hardware-configuration.nix
   ];
 
-  home-manager.users.michiel = import ./home.nix { config = cfg; lib = lib; pkgs = pkgs; };
+  home-manager.users.michiel = import ./home.nix { inherit lib; inherit pkgs; config = cfg; };
 
   environment.systemPackages = with pkgs; [
     google-cloud-sdk
@@ -21,6 +21,9 @@ in {
     enable = true;
     openFirewall = true;
   };
+
+  # To use the Yubikey as a smart card
+  services.pcscd.enable = true;
 
   modules = {
     editors = {
