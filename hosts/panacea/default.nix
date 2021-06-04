@@ -13,10 +13,8 @@ in {
     google-cloud-sdk
     kubectl
     kubectx
-    conftest
     teams
     hexchat
-    my.kube-linter
   ];
 
   services.plex = {
