@@ -63,5 +63,9 @@ in {
       terraform.enable = true;
       aws.enable = true;
     };
+
+    media = {
+      spotify.enable = true;
+    };
   };
 }
