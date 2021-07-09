@@ -25,6 +25,8 @@ in {
   # To use the Yubikey as a smart card
   services.pcscd.enable = true;
 
+  programs.steam.enable = true;
+
   modules = {
     editors = {
       emacs.enable = true;
