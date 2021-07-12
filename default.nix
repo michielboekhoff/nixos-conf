@@ -43,7 +43,6 @@ with lib.my;
     cached-nix-shell
     coreutils
     git
-    vim
     wget
     gnumake
     unzip

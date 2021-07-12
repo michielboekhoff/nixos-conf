@@ -31,6 +31,7 @@ in {
     editors = {
       emacs.enable = true;
       intellij.enable = true;
+      vim.enable = true;
       vscode = {
         enable = true;
         extensions = [
