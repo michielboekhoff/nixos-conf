@@ -32,6 +32,7 @@ in {
       emacs.enable = true;
       intellij.enable = true;
       vim.enable = true;
+      android-studio.enable = true;
       vscode = {
         enable = true;
         extensions = [
