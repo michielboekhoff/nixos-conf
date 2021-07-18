@@ -60,6 +60,8 @@ in {
       # :lang rust
       rustfmt
       unstable.rust-analyzer
+      # :lang nix
+      nixfmt
     ];
 
     environment.variables.PATH = [ "$XDG_CONFIG_HOME/emacs/bin" ];
