@@ -15,6 +15,7 @@ in {
     kubectx
     teams
     hexchat
+    discord
   ];
 
   services.plex = {
