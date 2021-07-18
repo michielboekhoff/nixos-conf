@@ -2,7 +2,8 @@
 
 with lib;
 with lib.my;
-let cfg = config.modules.editors.android-studio;
+let
+  cfg = config.modules.editors.android-studio;
 in {
   options.modules.editors.android-studio = {
     enable = mkBoolOpt false;
