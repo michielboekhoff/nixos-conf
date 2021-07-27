@@ -30,7 +30,10 @@ in {
 
   modules = {
     editors = {
-      emacs.enable = true;
+      emacs = {
+        enable = true;
+        daemon = true;
+      };
       intellij.enable = true;
       vim.enable = true;
       android-studio.enable = true;
