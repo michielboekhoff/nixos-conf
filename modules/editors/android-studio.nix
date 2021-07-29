@@ -2,16 +2,11 @@
 
 with lib;
 with lib.my;
-let
-  cfg = config.modules.editors.android-studio;
+let cfg = config.modules.editors.android-studio;
 in {
-  options.modules.editors.android-studio = {
-    enable = mkBoolOpt false;
-  };
+  options.modules.editors.android-studio = { enable = mkBoolOpt false; };
 
   config = mkIf cfg.enable {
-    user.packages = with pkgs; [
-      androidStudioPackages.beta
-    ];
+    user.packages = with pkgs; [ androidStudioPackages.beta ];
   };
 }

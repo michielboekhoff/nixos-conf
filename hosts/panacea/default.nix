@@ -2,12 +2,13 @@
 
 let cfg = config.dotfiles;
 in {
-  imports = [
-    ./configuration.nix
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./configuration.nix ./hardware-configuration.nix ];
 
-  home-manager.users.michiel = import ./home.nix { inherit lib; inherit pkgs; config = cfg; };
+  home-manager.users.michiel = import ./home.nix {
+    inherit lib;
+    inherit pkgs;
+    config = cfg;
+  };
 
   environment.systemPackages = with pkgs; [
     google-cloud-sdk
@@ -56,25 +57,17 @@ in {
       };
     };
 
-    shell = {
-      zsh.enable = true;
-    };
+    shell = { zsh.enable = true; };
 
-    gaming = {
-      lutris.enable = true;
-    };
+    gaming = { lutris.enable = true; };
 
-    torrent = {
-      qbittorrent.enable = true;
-    };
+    torrent = { qbittorrent.enable = true; };
 
     dev = {
       terraform.enable = true;
       aws.enable = true;
     };
 
-    media = {
-      spotify.enable = true;
-    };
+    media = { spotify.enable = true; };
   };
 }

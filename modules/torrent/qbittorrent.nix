@@ -8,9 +8,7 @@ with lib;
 with lib.my;
 let cfg = config.modules.torrent.qbittorrent;
 in {
-  options.modules.torrent.qbittorrent = {
-    enable = mkBoolOpt false;
-  };
+  options.modules.torrent.qbittorrent = { enable = mkBoolOpt false; };
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ qbittorrent ];
