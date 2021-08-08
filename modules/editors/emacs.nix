@@ -9,6 +9,7 @@ with lib.my;
 let
   cfg = config.modules.editors.emacs;
   configDir = config.dotfiles.configDir;
+  emacsPkg = with pkgs; ((emacsPackagesNgGen emacsPgtkGcc).emacsWithPackages (epkgs: with epkgs; [ vterm ]));
 in {
   options.modules.editors.emacs = {
     enable = mkBoolOpt false;
@@ -25,7 +26,7 @@ in {
     user.packages = with pkgs; [
       ## Emacs itself
       binutils # native-comp needs 'as', provided by this
-      emacsPgtkGcc # 28 + pgtk + native-comp
+      emacsPkg
 
       ## Doom dependencies
       git
@@ -64,7 +65,7 @@ in {
       nixfmt
     ];
 
-    services.emacs.package = pkgs.emacsPgtkGcc;
+    services.emacs.package = emacsPkg;
     services.emacs.enable = cfg.daemon;
 
     environment.shellAliases = { em = "emacseditor"; };
