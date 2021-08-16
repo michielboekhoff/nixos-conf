@@ -15,6 +15,8 @@ in {
     kubectl
     kubectx
     teams
+    zoom-us
+    google-chrome
     hexchat
     discord
   ];
