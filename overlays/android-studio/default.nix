@@ -8,8 +8,8 @@ let
       inherit (super) buildFHSUserEnv;
     };
   betaVersion = {
-    version = "2020.3.1.22";
-    sha256Hash = "Stt7mHbtelmuEt5cv+ekAuHAe+kVpKUWoy/vHTC0cnY=";
+    version = "2020.3.1.23";
+    sha256Hash = "UxelXWRQmMIuecNDP1UIk8uv1q5TpSeHerHTslZsshs=";
   };
 in {
   androidStudioPackages.beta = mkStudio (betaVersion // {
