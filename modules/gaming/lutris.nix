@@ -8,6 +8,6 @@ in {
   options = { modules.gaming.lutris.enable = mkBoolOpt false; };
 
   config = mkIf cfg.lutris.enable {
-    environment.systemPackages = with pkgs; [ lutris ];
+    environment.systemPackages = with pkgs; [ lutris wineWowPackages.staging ];
   };
 }
