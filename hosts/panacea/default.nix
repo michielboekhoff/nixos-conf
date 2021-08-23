@@ -19,6 +19,7 @@ in {
     google-chrome
     hexchat
     discord
+    ssm-session-manager-plugin
   ];
 
   services.plex = {
