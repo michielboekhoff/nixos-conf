@@ -10,17 +10,24 @@ in {
     config = cfg;
   };
 
-  environment.systemPackages = with pkgs; [
-    google-cloud-sdk
-    kubectl
-    kubectx
-    teams
-    zoom-us
-    google-chrome
-    hexchat
-    discord
-    ssm-session-manager-plugin
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      google-cloud-sdk
+      kubectl
+      kubectx
+      teams
+      zoom-us
+      google-chrome
+      hexchat
+      discord
+      ssm-session-manager-plugin
+    ];
+
+    shellAliases = {
+      github = "cd ~/git/github.com";
+      gitroot = "cd ~/git";
+    };
+  };
 
   services.plex = {
     enable = true;
