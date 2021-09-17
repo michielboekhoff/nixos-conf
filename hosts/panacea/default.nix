@@ -76,6 +76,10 @@ in {
     dev = {
       terraform.enable = true;
       aws.enable = true;
+      podman = {
+        enable = true;
+        dockerCompat = true;
+      };
     };
 
     media = { spotify.enable = true; };
