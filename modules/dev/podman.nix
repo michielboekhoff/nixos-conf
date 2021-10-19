@@ -16,6 +16,7 @@ in {
 
         # Create a `docker` alias for podman, to use it as a drop-in replacement
         dockerCompat = cfg.dockerCompat;
+	dockerSocket.enable = true;
       };
     };
   };
