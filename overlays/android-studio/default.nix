@@ -12,8 +12,10 @@ let
     sha256Hash = "UxelXWRQmMIuecNDP1UIk8uv1q5TpSeHerHTslZsshs=";
   };
 in {
-  androidStudioPackages.beta = mkStudio (betaVersion // {
-    channel = "beta";
-    pname = "android-studio-beta";
-  });
+  androidStudioPackages = super.androidStudioPackages // {
+    beta = mkStudio (betaVersion // {
+      channel = "beta";
+      pname = "android-studio-beta";
+    });
+  };
 }
