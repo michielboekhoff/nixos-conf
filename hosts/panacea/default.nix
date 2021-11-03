@@ -21,6 +21,7 @@ in {
       hexchat
       discord
       ssm-session-manager-plugin
+      xclip
     ];
 
     shellAliases = {
