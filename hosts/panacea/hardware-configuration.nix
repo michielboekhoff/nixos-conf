@@ -10,7 +10,7 @@
   hardware.sane.extraBackends = [ pkgs.epkowa ];
 
   # Needed to access the scanner without root
-  users.users.michiel.extraGroups = [ "scanner" "lp" "podman" ];
+  users.users.michiel.extraGroups = [ "scanner" "lp" ];
 
   boot.initrd.availableKernelModules =
     [ "xhci_pci" "ahci" "nvme" "usbhid" "uas" "sd_mod" "sdhci_pci" ];
