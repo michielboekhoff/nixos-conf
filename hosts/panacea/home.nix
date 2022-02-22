@@ -35,6 +35,7 @@ in {
     enableCompletion = true;
     initExtra = ''
       source ${./p10k.zsh}
+      source ~/.github/credentials # For Attest
     '';
     plugins = [{
       name = "zsh-nix-shell";
