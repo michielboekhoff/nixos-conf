@@ -22,6 +22,7 @@ in {
       discord
       ssm-session-manager-plugin
       xclip
+      my.protoc-gen-go-json
     ];
 
     shellAliases = {
