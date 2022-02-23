@@ -36,6 +36,7 @@ in {
     initExtra = ''
       source ${./p10k.zsh}
       source ~/.github/credentials # For Attest
+      export PATH=$PATH:~/.emacs.d/bin # To add Doom to the PATH
     '';
     plugins = [{
       name = "zsh-nix-shell";
