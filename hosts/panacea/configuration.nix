@@ -39,7 +39,6 @@
 
   # Enable the GNOME 3 Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.nvidiaWayland = false; # Force X11 for now
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
