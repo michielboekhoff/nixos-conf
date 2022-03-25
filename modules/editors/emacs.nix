@@ -9,7 +9,7 @@ with lib.my;
 let
   cfg = config.modules.editors.emacs;
   configDir = config.dotfiles.configDir;
-  emacsPkg = with pkgs; ((emacsPackagesNgGen emacsGcc).emacsWithPackages (epkgs: with epkgs; [ vterm ]));
+  emacsPkg = with pkgs; ((emacsPackagesFor emacsGcc).emacsWithPackages (epkgs: with epkgs; [ vterm ]));
 in {
   options.modules.editors.emacs = {
     enable = mkBoolOpt false;
