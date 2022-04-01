@@ -65,7 +65,13 @@ in {
            name = "python";
            publisher = "ms-python";
            version = "2022.5.10891003";
-           sha256 = lib.fakeSha256;
+           sha256 = "MM/a+I+s26MLq9xpMl7rQf1IXJD/cVKt+8K2Cxd7d+I=";
+         }
+         {
+           name = "direnv";
+           publisher = "mkhl";
+           version = "0.6.1";
+           sha256 = "5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
          }
        ];
      };
