@@ -4,7 +4,7 @@ with lib;
 with lib.my;
 let cfg = config.modules.editors;
 in {
-  options.modules.editors = { default = mkOpt types.str "vim"; };
+  options.modules.editors = { default = mkOpt types.str "nvim"; };
 
   config =
     mkIf (cfg.default != null) { environment.variables.EDITOR = cfg.default; };

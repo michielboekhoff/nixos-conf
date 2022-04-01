@@ -61,6 +61,12 @@ in {
            version = "1.12.1";
            sha256 = "cw2PyYDNG9mUNkKlYCfydi7OkAWSLHo6dS776YEQagU=";
          }
+         {
+           name = "python";
+           publisher = "ms-python";
+           version = "2022.5.10891003";
+           sha256 = lib.fakeSha256;
+         }
        ];
      };
    };
@@ -79,5 +85,7 @@ in {
    };
 
    media = { spotify.enable = true; };
+
+   hardware.scanning.enable = true;
  };
 }

@@ -41,7 +41,7 @@ with lib.my; {
       name = if elem user [ "" "root" ] then "michiel" else user;
     in {
       inherit name;
-      description = "The primary user account";
+      description = "michiel";
       extraGroups = [ "wheel" ];
       isNormalUser = true;
       home = "/home/${name}";
