@@ -56,5 +56,9 @@ in {
       key = "17D5640CE3C69AF6";
       signByDefault = true;
     };
+
+    extraConfig = {
+      url."git@github.com:".insteadOf = "https://github.com/";
+    };
   };
 }

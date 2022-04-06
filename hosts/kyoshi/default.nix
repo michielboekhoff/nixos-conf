@@ -92,6 +92,12 @@ in {
 
    media = { spotify.enable = true; };
 
-   hardware.scanning.enable = true;
+   hardware = {
+     scanning.enable = true;
+     printing = {
+       enable = true;
+       drivers = with pkgs; [ brgenml1cupswrapper brgenml1lpr ];
+     };
+   };
  };
 }
