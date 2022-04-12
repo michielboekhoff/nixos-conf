@@ -24,6 +24,7 @@ in {
      xclip
      my.protoc-gen-go-json
      vim
+     my.attest-cli
    ];
 
    shellAliases = {
