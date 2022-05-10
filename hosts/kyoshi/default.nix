@@ -78,7 +78,10 @@ in {
      };
    };
 
-   shell = { zsh.enable = true; };
+   shell = {
+     zsh.enable = true;
+     kitty.enable = true;
+   };
 
    torrent = { qbittorrent.enable = true; };
 
