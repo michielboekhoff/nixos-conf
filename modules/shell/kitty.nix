@@ -14,6 +14,9 @@ in {
         package = pkgs.nerdfonts;
         size = 12;
       };
+      keybindings = {
+        "kitty_mod+t" = "new_tab_with_cwd";
+      };
     };
   };
 }
