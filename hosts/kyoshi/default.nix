@@ -97,6 +97,7 @@ in {
    media = { spotify.enable = true; };
 
    hardware = {
+     moonlander.enable = true;
      scanning.enable = true;
      printing = {
        enable = true;
