@@ -53,20 +53,20 @@ in {
          {
            name = "terraform";
            publisher = "Hashicorp";
-           version = "2.10.2";
-           sha256 = "P+cHNkZMaZi4vSicgaHFlePuO9NyjMTm+g9qufyUczo=";
+           version = "2.23.0";
+           sha256 = "sha256-3v2hEf/cEd7NiXfk7eJbmmdyiQJ7bWl9TuaN+y5k+e0=";
          }
          {
            name = "vscode-docker";
            publisher = "ms-azuretools";
-           version = "1.12.1";
-           sha256 = "cw2PyYDNG9mUNkKlYCfydi7OkAWSLHo6dS776YEQagU=";
+           version = "1.22.1";
+           sha256 = "sha256-okR1mmwg1ZEUfP924LTa98LxCenwDZ1BIS/FLt0wo8c=";
          }
          {
            name = "python";
            publisher = "ms-python";
-           version = "2022.5.10891003";
-           sha256 = "MM/a+I+s26MLq9xpMl7rQf1IXJD/cVKt+8K2Cxd7d+I=";
+           version = "2022.11.12011103";
+           sha256 = "sha256-VGAMbg2Gwdi0PST+EdKMY5Cuw5GUMUJcZoN4SSSMOIk=";
          }
          {
            name = "direnv";
