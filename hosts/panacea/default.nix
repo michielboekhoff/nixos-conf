@@ -22,14 +22,11 @@ in {
       discord
       ssm-session-manager-plugin
       xclip
-      my.protoc-gen-go-json
     ];
 
     shellAliases = {
       github = "cd ~/git/github.com";
       gitroot = "cd ~/git";
-      aws-login =
-        "aws-google-auth -I C03163stn -S 533705401937 -R eu-west-1 -d 28800 --resolve-aliases --username michiel.boekhoff@askattest.com --profile sso --ask-role; export AWS_PROFILE=sso";
     };
   };
 
