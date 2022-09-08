@@ -5,8 +5,8 @@
 
   inputs = {
     # Core dependencies.
-    nixpkgs.url = "github:NixOS/nixpkgs"; # primary nixpkgs
-    nixpkgs-unstable.url = "nixpkgs/master"; # for packages on the edge
+    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs-local.url = "github:michielboekhoff/nixpkgs/google-cloud-sdk-numpy";
     home-manager.url = "github:rycee/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -15,7 +15,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-local, ... }:
     let
       inherit (lib.my) mapModules mapModulesRec mapHosts;
 
@@ -28,7 +28,7 @@
           overlays = extraOverlays ++ (lib.attrValues self.overlays);
         };
       pkgs = mkPkgs nixpkgs [ self.overlay ];
-      pkgs' = mkPkgs nixpkgs-unstable [ ];
+      pkgs' = mkPkgs nixpkgs-local [ ];
 
       lib = nixpkgs.lib.extend (self: super: {
         my = import ./lib {
@@ -40,7 +40,7 @@
       lib = lib.my;
 
       overlay = final: prev: {
-        unstable = pkgs';
+        local = pkgs';
         my = self.packages."${system}";
       };
 

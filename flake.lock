@@ -83,19 +83,20 @@
         "type": "indirect"
       }
     },
-    "nixpkgs-unstable": {
+    "nixpkgs-local": {
       "locked": {
-        "lastModified": 1662360313,
-        "narHash": "sha256-l1WcOsbdMjln7V3jwlvJ1/9ulN/ZOTMzz6kraF9uil4=",
-        "owner": "NixOS",
+        "lastModified": 1662635337,
+        "narHash": "sha256-lA1ctIPti0KGRLQcu3HfdNTpFQKS3tlXdcOi8rw4rak=",
+        "owner": "michielboekhoff",
         "repo": "nixpkgs",
-        "rev": "76daf3b9daa76829294c213d2f66ff266da79555",
+        "rev": "1e969412fcd622fb390c04ddd0fb1996c5bf1b26",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "ref": "master",
-        "type": "indirect"
+        "owner": "michielboekhoff",
+        "ref": "google-cloud-sdk-numpy",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixpkgs_2": {
@@ -119,7 +120,7 @@
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-local": "nixpkgs-local"
       }
     },
     "utils": {

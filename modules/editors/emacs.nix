@@ -60,7 +60,7 @@ in {
       fava
       # :lang rust
       rustfmt
-      unstable.rust-analyzer
+      rust-analyzer
       # :lang nix
       nixfmt
     ];

@@ -1,6 +1,9 @@
 { pkgs, config, lib, ... }:
 
 let cfg = config.dotfiles;
+    gcloud = pkgs.local.google-cloud-sdk.override {
+      #with-numpy = true;
+    };
 in {
   imports = [ ./configuration.nix ./hardware-configuration.nix ];
 
@@ -13,7 +16,7 @@ in {
 
  environment = {
    systemPackages = with pkgs; [
-     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+     #(gcloud.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
      kubectl
      kubectx
      teams
