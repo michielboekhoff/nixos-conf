@@ -58,9 +58,6 @@ in {
       # :lang beancount
       beancount
       fava
-      # :lang rust
-      rustfmt
-      rust-analyzer
       # :lang nix
       nixfmt
     ];
