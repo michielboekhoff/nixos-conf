@@ -5,8 +5,11 @@ with lib.my;
 let
   cfg = config.modules.editors.vscode;
   vscode-with-extensions = exts:
-    pkgs.vscode-with-extensions.override {
-      vscodeExtensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace exts;
+    let extensionsPartition = builtins.partition (ext: ext ? src) exts;
+        marketPlaceExts = extensionsPartition.wrong;
+        nixPkgsExts = extensionsPartition.right;
+    in pkgs.vscode-with-extensions.override {
+      vscodeExtensions = (pkgs.vscode-utils.extensionsFromVscodeMarketplace marketPlaceExts) ++ nixPkgsExts;
     };
 in {
   options.modules.editors.vscode = {

@@ -73,12 +73,7 @@ in {
             version = "0.6.1";
             sha256 = "5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
           }
-          {
-            name = "csharp";
-            publisher = "ms-dotnettools";
-            version = "1.25.0";
-            sha256 = "sha256-WE4DbJr1HqoyuS3mVYmIgd9DDTuSKPd6vdZn4YOPUtU=";
-          }
+          pkgs.vscode-extensions.ms-dotnettools.csharp
         ];
       };
     };
