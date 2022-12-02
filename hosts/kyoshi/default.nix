@@ -49,12 +49,7 @@ in {
       vscode = {
         enable = true;
         extensions = [
-          {
-            name = "terraform";
-            publisher = "Hashicorp";
-            version = "2.23.0";
-            sha256 = "sha256-3v2hEf/cEd7NiXfk7eJbmmdyiQJ7bWl9TuaN+y5k+e0=";
-          }
+          pkgs.vscode-extensions.hashicorp.terraform
           {
             name = "vscode-docker";
             publisher = "ms-azuretools";
