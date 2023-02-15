@@ -26,6 +26,7 @@ in {
       ssm-session-manager-plugin
       xclip
       vim
+      my.protoc-gen-go-json
     ];
 
     shellAliases = {
