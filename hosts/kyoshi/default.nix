@@ -69,6 +69,18 @@ in {
             version = "0.6.1";
             sha256 = "5/Tqpn/7byl+z2ATflgKV1+rhdqj+XMEZNbGwDmGwLQ=";
           }
+          {
+            name = "vscode-bicep";
+            publisher = "ms-azuretools";
+            version = "0.15.31";
+            sha256 = "sha256-+GTaGFgevAPlMjMXFTuhTvP0hwBAnP1HY5NRU7dCkPw=";
+          }
+          {
+            name = "vscode-dotnet-runtime";
+            publisher = "ms-dotnettools";
+            version = "1.6.0";
+            sha256 = "sha256-A3m5IvPKgmF2Dix1/bHFGcrJYriYsFgRagkZNcWf/RA=";
+          }
           pkgs.vscode-extensions.ms-dotnettools.csharp
         ];
       };
