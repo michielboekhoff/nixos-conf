@@ -16,7 +16,6 @@ in {
 
   environment = {
     systemPackages = with pkgs; [
-      #(gcloud.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
       kubectl
       kubectx
       teams
@@ -26,6 +25,7 @@ in {
       ssm-session-manager-plugin
       xclip
       vim
+			nil
       my.protoc-gen-go-json
     ];
 
