@@ -27,6 +27,7 @@ in {
       vim
 			nil
       my.protoc-gen-go-json
+			my.bicep
     ];
 
     shellAliases = {
