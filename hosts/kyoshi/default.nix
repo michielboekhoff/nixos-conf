@@ -82,6 +82,12 @@ in {
             version = "1.6.0";
             sha256 = "sha256-A3m5IvPKgmF2Dix1/bHFGcrJYriYsFgRagkZNcWf/RA=";
           }
+					{
+						name = "html-preview-vscode";
+						publisher = "george-alisson";
+						version = "0.2.5";
+						sha256 = "sha256-1kjhNLFRUashPYko5F7p8gNwe+heT4wKAPZiJsTqgdg=";
+					}
           pkgs.vscode-extensions.ms-dotnettools.csharp
         ];
       };
