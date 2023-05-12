@@ -88,6 +88,12 @@ in {
 						version = "0.2.5";
 						sha256 = "sha256-1kjhNLFRUashPYko5F7p8gNwe+heT4wKAPZiJsTqgdg=";
 					}
+					{
+						name = "liveserver";
+						publisher = "ritwickdey";
+						version = "5.7.9";
+						sha256 = "sha256-w0CYSEOdltwMFzm5ZhOxSrxqQ1y4+gLfB8L+EFFgzDc=";
+					}
           pkgs.vscode-extensions.ms-dotnettools.csharp
         ];
       };
