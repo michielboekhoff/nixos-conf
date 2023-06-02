@@ -1,4 +1,4 @@
-{ config, lib, pkgs, home-manager, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 with lib.my;
@@ -10,7 +10,7 @@ in {
     home-manager.users."${config.user.name}".programs.kitty = {
       enable = true;
       font = {
-        name = "FiraCode Nerd Font";
+        name = "JetBrainsMono Nerd Font";
         package = pkgs.nerdfonts;
         size = 12;
       };
