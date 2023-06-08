@@ -53,7 +53,7 @@ in {
     userEmail = "michielalexanderb@gmail.com";
 
     signing = {
-      key = "17D5640CE3C69AF6";
+      key = "0x17D5640CE3C69AF6";
       signByDefault = true;
     };
 
