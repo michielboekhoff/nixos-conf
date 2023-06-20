@@ -94,6 +94,12 @@ in {
 						version = "5.7.9";
 						sha256 = "sha256-w0CYSEOdltwMFzm5ZhOxSrxqQ1y4+gLfB8L+EFFgzDc=";
 					}
+					{
+						name = "copilot";
+						publisher = "GitHub";
+						version = "1.89.156";
+						sha256 = "sha256-BJnYd9D3bWrZI8UETnAua8ngVjZJ7EXB1UrZAjVnx1E=";
+					}
           pkgs.vscode-extensions.ms-dotnettools.csharp
         ];
       };

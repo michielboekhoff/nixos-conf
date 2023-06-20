@@ -27,7 +27,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs;
-      [ (vscode-with-extensions cfg.extensions) ];
+    environment.systemPackages = let deps = 
+			lib.concatMap (el: el . deps or []) cfg.extensions; 
+			in [ (vscode-with-extensions cfg.extensions) ] ++ deps;
   };
 }
