@@ -50,6 +50,7 @@ in {
       android-studio.enable = true;
       vscode = {
         enable = true;
+				enableInsiders = true;
         extensions = [
           pkgs.vscode-extensions.hashicorp.terraform
           {
