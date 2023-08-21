@@ -26,6 +26,7 @@ in {
       xclip
       vim
 			nil
+			plasma-nm
       my.protoc-gen-go-json
 			my.bicep
     ];

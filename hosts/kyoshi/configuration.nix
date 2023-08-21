@@ -24,6 +24,7 @@
   networking.useDHCP = false;
   networking.interfaces.enp4s0.useDHCP = true;
   networking.interfaces.wlp5s0.useDHCP = true;
+	networking.networkmanager.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -36,15 +37,40 @@
   #   keyMap = "us";
   # };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+	services.xserver.displayManager.sddm.enable = true;
+	services.xserver.desktopManager.plasma5.enable = true;
+	services.xserver.displayManager.defaultSession = "plasmawayland";
 
   services.xserver.videoDrivers = [ "nvidia" ];
+
+	services.xserver.enable = true;
+	hardware.bluetooth.enable = true;
+	security.rtkit.enable = true;
+	services.pipewire = {
+		enable = true;
+		alsa.enable = true;
+		alsa.support32Bit = true;
+		pulse.enable = true;
+	};
+
+	programs.hyprland = {
+		enable = true;
+		xwayland.enable = true;
+		nvidiaPatches = true;
+	};
+
+	hardware.opengl = {
+		enable = true;
+		driSupport = true;
+		driSupport32Bit = true;
+	};
+
+	hardware.nvidia = {
+		modesetting.enable = true;
+		open = false;
+		nvidiaSettings = true;
+	};
   
 
   # Configure keymap in X11
