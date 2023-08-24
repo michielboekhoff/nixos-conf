@@ -48,4 +48,5 @@
   swapDevices = [ ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+	hardware.nvidia.powerManagement.enable = true;
 }
