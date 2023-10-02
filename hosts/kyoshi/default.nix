@@ -18,8 +18,6 @@ in {
     systemPackages = with pkgs; [
       kubectl
       kubectx
-      teams
-      zoom-us
       google-chrome
       discord
       ssm-session-manager-plugin
