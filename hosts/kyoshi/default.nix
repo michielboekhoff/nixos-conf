@@ -37,6 +37,7 @@ in {
 
   # To use the Yubikey as a smart card
   services.pcscd.enable = true;
+	services.plex.enable = true;
 
   modules = {
     editors = {
