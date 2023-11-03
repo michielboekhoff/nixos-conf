@@ -44,7 +44,7 @@ in {
   programs.gpg.enable = true;
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "curses";
+    pinentryFlavor = "gnome3";
   };
 
   programs.git = {
