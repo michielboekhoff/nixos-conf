@@ -9,6 +9,10 @@ in {
   config = mkIf cfg.enable {
     hardware.opengl.enable = true;
     hardware.opengl.driSupport32Bit = true;
+		hardware.opengl.extraPackages = with pkgs; [
+			vaapiVdpau
+			nvidia-vaapi-driver	
+		];
 
     services.xserver.videoDrivers = [ "nvidia" ];
 
