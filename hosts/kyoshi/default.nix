@@ -19,6 +19,7 @@ in {
       kubectl
       kubectx
       google-chrome
+			firefox
       discord
       ssm-session-manager-plugin
       xclip
