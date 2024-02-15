@@ -2,9 +2,6 @@
 
 let
   cfg = config.dotfiles;
-  gcloud = pkgs.local.google-cloud-sdk.override {
-    #with-numpy = true;
-  };
 in {
   imports = [ ./configuration.nix ./hardware-configuration.nix ];
 
