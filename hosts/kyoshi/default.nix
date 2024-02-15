@@ -25,7 +25,6 @@ in {
 			plasma-nm
       my.protoc-gen-go-json
 			my.bicep
-			my.terravision
     ];
 
     shellAliases = {
