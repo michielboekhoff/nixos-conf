@@ -6,8 +6,8 @@ let
   cfg = config.modules.editors.vscode;
 	insiders = (pkgs.vscode.override { isInsiders = true; }).overrideAttrs (oldAttrs: {
 		src = (builtins.fetchTarball {
-			url = "https://code.visualstudio.com/sha/download?build=insider&os=linux-x64";
-			sha256 = "1cahkjzrih05yifc7dka75q1xmiy0jj777bhv0c687gbsd3lmxpc";
+			url = "https://vscode.download.prss.microsoft.com/dbazure/download/insider/99a19815253d91900be5ec1016e0ecc7cc9a6950/code-insider-x64-1710395352.tar.gz";
+			sha256 = "137jbixd1ayznhmsbjhyby9ksg5bj21zmlnrhd77lhk1n36rqnka";
 		});
 		version = "latest";
 	});
