@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
 with lib;
 with lib.my;
@@ -12,11 +12,8 @@ let
 		version = "latest";
 	});
   vscode-with-extensions = exts:
-    let extensionsPartition = builtins.partition (ext: ext ? src) exts;
-        marketPlaceExts = extensionsPartition.wrong;
-        nixPkgsExts = extensionsPartition.right;
-    in pkgs.vscode-with-extensions.override {
-      vscodeExtensions = (pkgs.vscode-utils.extensionsFromVscodeMarketplace marketPlaceExts) ++ nixPkgsExts;
+   pkgs.vscode-with-extensions.override {
+      vscodeExtensions = exts;
     };
 in {
   options.modules.editors.vscode = {
@@ -35,6 +32,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+		nixpkgs.overlays = [ inputs.nix-vscode-extensions.overlays.default ];
+
     environment.systemPackages = let 
 			deps = lib.concatMap (el: el . deps or []) cfg.extensions;
 			insider = if cfg.enableInsiders then [ insiders ] else [];

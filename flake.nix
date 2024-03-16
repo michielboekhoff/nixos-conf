@@ -9,6 +9,7 @@
     nixpkgs-local.url = "github:michielboekhoff/nixpkgs/google-cloud-sdk-numpy";
     home-manager.url = "github:rycee/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+		nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";	
 
     # Extras
     emacs-overlay.url = "github:nix-community/emacs-overlay";
