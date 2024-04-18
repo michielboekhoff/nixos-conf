@@ -54,14 +54,12 @@ in {
 					vscode-marketplace.ms-azuretools.vscode-docker
 					vscode-marketplace.ms-python.python
 					vscode-marketplace.mkhl.direnv
-					vscode-marketplace.ms-dotnettools.csdevkit
 					vscode-marketplace.ms-dotnettools.vscode-dotnet-runtime
 					vscode-marketplace.github.copilot
 					vscode-marketplace.ms-vscode-remote.remote-containers
 					vscode-marketplace.vscodevim.vim
 					vscode-marketplace.editorconfig.editorconfig
 					vscode-marketplace.graphql.vscode-graphql
-					vscode-extensions.ms-dotnettools.csharp
 					vscode-marketplace.graphql.vscode-graphql-syntax
 					vscode-marketplace.ms-azuretools.vscode-azurefunctions
 
